@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap');
+@import "helpers/variables";
+@import "helpers/placeholders";
+
+h2{
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 48px;
+}
+
+h3{
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 43px;
+}
+
+
+@mixin grid($row, $column, $horizontally:center, $vertically:center) {
+    grid-row: $row;
+    grid-column: $column;
+    justify-self: $horizontally;
+    align-self: $vertically
+}
+
+section{
+    margin-bottom: 8vh;
+}
+
+body{
+    font-family: 'Alegreya Sans', sans-serif;
+    color: $zeus-blue;
+    font-style: normal;
+    overflow-x: hidden;
+}
+
+header{
+    position:relative;
+    height: 100vh;
+    width: 100vw;
+    margin-bottom: 7vh;
+}
+
+#header-text {
+    display:grid;
+    align-content:center;
+    justify-items:center;
+    height: 80vh;
+}
+
+#logo {
+    position:absolute;
+    height: 15vh;
+    width:auto;
+    top: 20px;
+    left: 20px;
+}
+
+#voting-process{
+    position: absolute;
+    margin-top:20px;
+    bottom:0;
+    left:0;
+}
+
+.section-title {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 58px;
+    text-align: center;
+}
+
+p{
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.rq-button {
+    background: $ciel;
+    box-shadow: 0px 8px 8px rgba(0, 45, 86, 0.2);
+    width: 244px;
+    height: 69px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#why-zeus {
+    display:grid;
+    height: 140vh;
+    width: 100vw;
+    grid-template-rows: 20vh 40vh 40vh 40vh;
+    grid-template-columns: [start] 20% 30% 30% 20% [end];
+    grid-auto-flow: row;
+}
+
+#why-zeus-title{
+    @include grid(1, start/end, center);
+}
+
+#transparency-text {
+    @include grid(2, 2, start);
+}
+
+#integrity-text {
+    @include grid(3, 3, start);
+    text-align: right;
+}
+
+#proven-text{
+    @include grid(4, 2, start);
+}
+
+#transparency-icon {
+    @include grid(2, 3, end);
+}
+
+#integrity-icon {
+    @include grid(3, 2, start);
+}
+
+#proven-icon{
+    @include grid(4, 3, end);
+}
+
+#integrity-row{
+    grid-row:3;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background: $light-grey;
+}
+
+#go-online{
+    background-image: url(img/blue-background.svg); 
+    height:90vh; 
+    width:100vw;   
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    color: white;
+    display: grid;
+    grid-template-columns: [start] 12% 38% 38% 12% [end];
+    grid-template-rows: auto;
+
+    h1{
+        font-weight: 800;
+        font-size: 64px;
+        line-height: 77px;
+        margin-bottom:30px;
+    }
+
+    p{
+        font-size: 22px;
+        font-weight: 500;
+        margin-bottom:40px;
+    }
+}
+
+#go-online-text{
+    @include grid(1,2);
+}
+
+#go-online-img{
+    @include grid(1,3, end, end);
+    margin-bottom:-5px;
+}
