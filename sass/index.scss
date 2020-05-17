@@ -236,26 +236,22 @@ p{
 }
 
 #ballot-white {
-    background-image: url(img/big-ballot.svg); 
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-    width: 96vw;
-    height: 30vh;
-    bottom: 0;
+    bottom: -2px;
     position: absolute;
-    right: 2vw;
-    left: 2vw;
+    left:0;
+    right:0;
+    margin:auto;
 }
 
 
 #form-background {
     border: 3px solid $zeus-blue;
     background-color: white;
-    height: 60vh;
-    width: 50%;
-    bottom: 40%;
+    height: 60%;
+    width: 46%;
+    bottom: 13%;
     position: absolute;
-    left: 25%;
+    left: 27%;
     z-index: 3;
 }
 
@@ -276,5 +272,5 @@ label{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 8%;
+    top: 9%;
 }
