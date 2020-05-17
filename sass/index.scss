@@ -14,6 +14,12 @@ h3{
     line-height: 43px;
 }
 
+h4{
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+}
+
 
 @mixin grid($row, $column, $horizontally:center, $vertically:center) {
     grid-row: $row;
@@ -31,6 +37,8 @@ body{
     color: $zeus-blue;
     font-style: normal;
     overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
 }
 
 header{
@@ -168,4 +176,105 @@ p{
 #go-online-img{
     @include grid(1,3, end, end);
     margin-bottom:-5px;
+}
+
+#video{
+    position: absolute; 
+    z-index: 2;   
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+    border: 3px solid $zeus-blue;
+}
+
+#trusted-icons {
+    display:grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-auto-flow: row;
+    padding-right: 5vw;
+    padding-left: 5vw;
+}
+
+#public-service-icon{
+    @include grid(1,1);
+}
+
+#public-service-text{
+    @include grid(2,1, $vertically: start);
+    margin-top:0;
+}
+
+#enterprises-icon{
+    @include grid(1,2);
+}
+
+#enterprises-text{
+    @include grid(2,2, $vertically: start);
+    margin-top:0;
+}
+
+#individuals-icon{
+    @include grid(1,3);
+}
+
+#individuals-text{
+    @include grid(2,3, $vertically: start);
+    margin-top:0;
+}
+
+#request-demo{
+    background-image: url(img/grey-background.svg); 
+    height:95vh; 
+    width:100vw;   
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    margin-bottom: 0;
+    position:relative;
+    text-align:center;
+}
+
+#ballot-white {
+    background-image: url(img/big-ballot.svg); 
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    width: 96vw;
+    height: 30vh;
+    bottom: 0;
+    position: absolute;
+    right: 2vw;
+    left: 2vw;
+}
+
+
+#form-background {
+    border: 3px solid $zeus-blue;
+    background-color: white;
+    height: 60vh;
+    width: 50%;
+    bottom: 40%;
+    position: absolute;
+    left: 25%;
+    z-index: 3;
+}
+
+label{
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    text-align:right;
+}
+
+#request-form{
+    padding-top:10%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+#request-title{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 8%;
 }
