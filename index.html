@@ -11,15 +11,18 @@
     <title>Zeus Online Voting</title>
   </head>
   <body>
+
     <header>
         <img src="img/logo.png" id="logo">
         <div id="header-text">
                 <h1 class="section-title">Elections that can’t be compromised.</h1>
                 <p>Go online with the best trusted online voting platform.</p>
-                <button class="rq-button">Request a Demo</button>
+                <button class="rq-button" onclick="location.href='#request-demo'" type="button">Request a Demo</button>
         </div>
         <img src="img/voting-process.svg" width="100%" id="voting-process">
+        <img src="img/voting-process-mobile.svg" width="100%" id="voting-process-mobile">
     </header>
+
     <section id="why-zeus">
       <div id="why-zeus-title">
         <h1 class="section-title">Why to choose Zeus</h1>
@@ -31,7 +34,7 @@
           This guarantees that anyone can verify its operation.</p>
       </div>
       <div id="transparency-icon">
-        <img src="img/transparency-icon.svg" width="auto">
+        <img src="img/transparency-icon.svg" width="auto" class="why-zeus-icon">
       </div>
       <div id="integrity-row"></div>
       <div id="integrity-text">
@@ -41,7 +44,7 @@
           Zeus’ unique design safeguards the integrity of the elections on all levels.</p>
       </div>
       <div id="integrity-icon">
-        <img src="img/integrity-icon.svg" width="auto">
+        <img src="img/integrity-icon.svg" width="auto" class="why-zeus-icon">
       </div>
       <div id="proven-text">
         <h2>Proven.</h2>
@@ -50,9 +53,10 @@
           Zeus has taken on more than {700} elections, all with flawless execution.</p>
       </div>
       <div id="proven-icon">
-        <img src="img/proven-icon.svg" width="auto">
+        <img src="img/proven-icon.svg" width="auto" class="why-zeus-icon">
       </div>
     </section>
+
     <section id="go-online">
       <div id="go-online-text">
         <h1>Go online</h1>
@@ -71,19 +75,16 @@
       </div>
       <img src="img/go-online.svg" width="70%" id="go-online-img">
     </section>
-    <section style="height: 75vh;">
-      <div style="position:relative; height:100%" >
-        <img src="img/lines.svg" width="100%" style="position:absolute;   left: 50%;
-        top: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);">
-        <iframe width="880" height="496"  
-        src="https://www.youtube.com/embed/zdISS9kvCLM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-        id="video">
+
+    <section id="video-section">
+        <img src="img/lines.svg" id="lines">
+        <iframe  
+          src="https://www.youtube.com/embed/zdISS9kvCLM" frameborder="0" 
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video">
         </iframe>
-      </div>
     </section>
-    <section style="text-align:center; padding-left: 12%; padding-right: 12%; padding-top:3%; padding-bottom:3%;">
+
+    <section id="trusted-section">
       <h1 class="section-title">Trusted by</h1>
       <br/>
       <p>
@@ -92,14 +93,15 @@
       </p>
       <br/>
       <div id="trusted-icons">
-        <img src="img/public-services.svg" width="auto" id="public-service-icon">
+        <img src="img/public-services.svg" id="public-service-icon">
         <h4 id="public-service-text">Public Services</h4>
-        <img src="img/enterprises.svg" width="auto" id="enterprises-icon">
+        <img src="img/enterprises.svg" id="enterprises-icon">
         <h4 id="enterprises-text">Enterprises</h4>
-        <img src="img/individuals.svg" width="auto" id="individuals-icon">
+        <img src="img/individuals.svg" id="individuals-icon">
         <h4 id="individuals-text">Individuals</h4>
       </div>
     </section>
+
     <section id="request-demo">
       <h1 class="section-title" id="request-title">Do you want to conduct a poll?</h1>
       <img src="img/big-ballot.svg" width="90%" id=ballot-white>
@@ -138,14 +140,10 @@
             </form>
         </div>
       </div>
-
     </section>
-    <footer style="background: #002D56; height: 100px; text-align:center; padding-top:40px;">
-      <p style="color:white;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 18px;
-      line-height: 20px;">Copyright GRNET 2020. All right reserved.Powered by GRNET</p>
+
+    <footer>
+      <p>Copyright GRNET 2020. All right reserved.Powered by GRNET</p>
     </footer>
 
     <!-- JS, Popper.js, and jQuery -->
