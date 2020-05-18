@@ -32,11 +32,15 @@ section{
     margin-bottom: 8vh;
 }
 
+html, body {
+    overflow-x: hidden;
+  }
+
 body{
+    position: relative;
     font-family: 'Alegreya Sans', sans-serif;
     color: $zeus-blue;
     font-style: normal;
-    overflow-x: hidden;
     margin: 0px;
     padding: 0px;
 }
@@ -326,7 +330,7 @@ footer{
     }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 920px) {
 
     .section-title{
         font-weight: 550;
@@ -626,6 +630,7 @@ footer{
     
     #go-online-text{
         @include grid(1,2);
+        margin-bottom: 0px;
     }
     
     #go-online-img{
