@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap');
-@import "helpers/variables";
-@import "helpers/placeholders";
+
+//colors
+$zeus-blue: #002D56;
+$ciel: #5DA4E5;
+$ciel-hover: #2186E2;
+$light-grey: #F6F6F6;
+
+@function video-height($width) {
+    $video-dimensions: 1080/1920;
+    $height: $width * $video-dimensions;
+    @return $height;
+}
+
+@function video-section($width) {
+    $video-height: $width * 1080/1920;
+    @return $video-height + 5vw;
+}
 
 h2{
     font-weight: bold;
@@ -121,6 +136,10 @@ p{
     grid-auto-flow: row;
 }
 
+.why-zeus-icon{
+    width: auto;
+}
+
 #why-zeus-title{
     @include grid(1, start/end, center);
 }
@@ -192,7 +211,7 @@ p{
 }
 
 #video-section{
-    height: 75vh;
+    height: video-section(60vw); // 60vw is the width of the youtuve video
     position:relative;
 }
 
@@ -213,15 +232,14 @@ p{
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); 
     border: 3px solid $zeus-blue;
-    width: 70vw;
-    height: 70vh;
+    width: 60vw;
+    height: video-height(60vw);
 }
 
 #trusted-section{
     text-align:center; 
     padding-left: 12%; 
     padding-right: 12%; 
-    padding-top:3%; 
     padding-bottom:3%;
 }
 
@@ -330,7 +348,362 @@ footer{
     }
 }
 
-@media only screen and (max-width: 920px) {
+@media only screen and (min-width: 961px) and (max-height: 745px) {
+    .section-title{
+        font-weight: 550;
+        font-size: 30px;
+        line-height: 34px;
+    }
+
+    h2{
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 34px;
+    }
+    
+    h3{
+        font-weight: normal;
+        font-size: 26px;
+        line-height: 31px;
+    }
+    
+    h4{
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 29px;
+    }
+
+    p{
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    header{
+        position: initial;
+        height: 100%;
+    }
+
+    #logo{
+        height: 80px;
+        top: 10px;
+        left: 10px;;
+        margin-bottom: 10px;
+    }
+
+    #header-text{
+        height: auto;
+        margin-top: 140px;
+    }
+    #voting-process{
+        display:block;
+        position: relative;
+        margin-top: 50px;
+        margin-bottom: 50px
+    }
+    
+    #voting-process-mobile{
+        display:none;
+    }
+
+    .rq-button {
+        width: 166px;
+        height: 47px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    #why-zeus {
+        height: 160vh;
+        grid-template-rows: 10vh 50vh 50vh 50vh;
+        grid-template-columns: [start] 15% 35% 35% 15% [end];
+    }
+
+    .why-zeus-icon{
+        width: 80%;
+    }
+    
+    #transparency-text {
+        @include grid(2, 2, start);
+    }
+    
+    #integrity-text {
+        @include grid(3, 3, start);
+        text-align: right;
+    }
+    
+    #proven-text{
+        @include grid(4, 2, start);
+    }
+    
+    #transparency-icon {
+        @include grid(2, 3, end);
+    }
+    
+    #integrity-icon {
+        @include grid(3, 2, start);
+    }
+    
+    #proven-icon{
+        @include grid(4, 3, end);
+    }
+
+
+    #go-online{ 
+        height:auto; 
+        grid-template-columns: [start] 10% 80% 10% [end];
+    }
+
+    #go-online-text{
+        @include grid(1,2);
+        margin-bottom: 0px;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    
+    #go-online-img{
+        display:none;
+    }
+
+
+    #request-demo {
+        height: auto;
+        position: initial;
+    }
+    
+    #ballot-white {
+        display:none;
+    }
+    
+    
+    #form-background {
+        height: auto;
+        margin-left: 15%;
+        margin-top: 5%;
+        position:initial;
+        width:70%;
+        margin-bottom:-4px;
+    }
+    
+    label{
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 29px;
+        text-align:left;
+    }
+
+    #request-form{
+        padding-top:10%;
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-bottom:5%;
+    }
+
+    #form-button{
+        margin-bottom:0px;
+    }
+    
+    #request-title{
+        transform: none;
+        position: initial;
+        padding-top: 5%;
+    }
+}
+
+@media only screen and (max-width: 1200px) and (orientation: landscape) {
+    #why-zeus {
+        grid-template-columns: [start] 10% 40% 40% 10% [end];
+    }
+
+    #request-demo {
+        height: auto;
+        position: initial;
+    }
+    
+    #ballot-white {
+        display:none;
+    }
+    
+    
+    #form-background {
+        height: auto;
+        margin-left: 15%;
+        margin-top: 5%;
+        position:initial;
+        width:70%;
+        margin-bottom:-4px;
+    }
+    
+    label{
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 29px;
+        text-align:left;
+    }
+
+    #request-form{
+        padding-top:10%;
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-bottom:5%;
+    }
+
+    #form-button{
+        margin-bottom:0px;
+    }
+    
+    #request-title{
+        transform: none;
+        position: initial;
+        padding-top: 5%;
+    }
+}
+
+@media only screen and (max-width: 960px) and (orientation: landscape) {
+    .section-title{
+        font-weight: 550;
+        font-size: 30px;
+        line-height: 34px;
+    }
+
+    h2{
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 34px;
+    }
+    
+    h3{
+        font-weight: normal;
+        font-size: 26px;
+        line-height: 31px;
+    }
+    
+    h4{
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 29px;
+    }
+
+    p{
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    header{
+        position: initial;
+        height: 100%;
+    }
+
+    #logo{
+        height: 80px;
+        top: 10px;
+        left: 10px;;
+        margin-bottom: 10px;
+    }
+
+    #header-text{
+        height: auto;
+        margin-top: 140px;
+    }
+    #voting-process{
+        display:block;
+        position: relative;
+        margin-top: 50px;
+        margin-bottom: 50px
+    }
+    
+    #voting-process-mobile{
+        display:none;
+    }
+
+    .rq-button {
+        width: 166px;
+        height: 47px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    #why-zeus {
+        height: 190vh;
+        grid-template-rows: 10vh 60vh 60vh 60vh;
+        grid-template-columns: [start] 5% 45% 45% 5% [end];
+    }
+
+    .why-zeus-icon{
+        width: 80%;
+    }
+
+
+    #go-online{ 
+        height:auto; 
+        grid-template-columns: [start] 10% 80% 10% [end];
+    }
+
+    #go-online-text{
+        @include grid(1,2);
+        margin-bottom: 0px;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    
+    #go-online-img{
+        display:none;
+    }
+
+
+    #request-demo {
+        height: auto;
+        position: initial;
+    }
+    
+    #ballot-white {
+        display:none;
+    }
+    
+    
+    #form-background {
+        height: auto;
+        margin-left: 5%;
+        margin-top: 5%;
+        position:initial;
+        width:90%;
+        margin-bottom:-4px;
+    }
+    
+    label{
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 29px;
+        text-align:left;
+    }
+
+    #request-form{
+        padding-top:10%;
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-bottom:10%;
+    }
+
+    #form-button{
+        margin-bottom:0px;
+    }
+    
+    #request-title{
+        transform: none;
+        position: initial;
+        padding-top: 5%;
+    }
+
+    footer{
+        p{
+          font-size: 14px;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 920px) and (orientation: portrait) {
 
     .section-title{
         font-weight: 550;
@@ -364,15 +737,12 @@ footer{
     }
 
     #voting-process{
-        display:none;
+        display:block;
+        bottom:15vh;
     }
     
     #voting-process-mobile{
-        display:block;
-        position: absolute;
-        margin-top:20px;
-        bottom: -20px;
-        left:0;
+        display:none;
     }
 
     section{
@@ -380,11 +750,13 @@ footer{
     }
 
     #why-zeus {
+        height: 110vh;
+        grid-template-rows: 5vh 35vh 35vh 35vh;
         grid-template-columns: [start] 10vw 40vw 40vw 10vw [end];
     }
 
     .why-zeus-icon{
-        width: 40vw;
+        width: 35vw;
     }
 
     #transparency-icon {
@@ -396,40 +768,32 @@ footer{
     }
     
     #proven-icon{
-        @include grid(4, 3, end);
+        @include grid(4, 3, stretch);
     }
     
    
-    #go-online{
-        display: grid;
-        grid-template-columns: [start] 10% 80% 10%[end];
-        grid-template-rows: auto;
-    
-        h1{
-            font-weight: 550;
-            font-size: 36px;
-            line-height: 34px;
-        }
-    
+    #go-online{ 
+        height:auto; 
+        grid-template-columns: [start] 10% 80% 10% [end];
+
         p{
-            font-size: 18px;
             font-weight: 400;
-            margin-bottom:40px;
         }
     }
-    
+
     #go-online-text{
-        margin-bottom: 200px;
         @include grid(1,2);
+        margin-bottom: 0px;
+        padding-top: 5%;
+        padding-bottom: 5%;
     }
     
     #go-online-img{
-        grid-column: 2/3;
-        width:40%;
+        display:none;
     }
 
     #video-section{
-        height: 40vh;
+        height: video-section(90vw); // 90vw is the width of the youtuve video;
     }
     
     #lines{
@@ -438,20 +802,14 @@ footer{
     
     #video{
         width: 90vw;
-        height: 30vh;
+        height: video-height(90vw);
     }
 
     
 
-    #request-demo{
-        background-image: url(img/grey-background.svg); 
-        height:90vh; 
-        width:100vw;   
-        background-repeat: no-repeat; /* Do not repeat the image */
-        background-size: cover; /* Resize the background image to cover the entire container */
-        margin-bottom: 0;
-        position:relative;
-        text-align:center;
+    #request-demo {
+        height: auto;
+        position: initial;
     }
     
     #ballot-white {
@@ -460,14 +818,12 @@ footer{
     
     
     #form-background {
-        border: 3px solid $zeus-blue;
-        border-bottom:0px;
-        background-color: white;
-        height: 70%;
-        width: 90%;
-        bottom: 0;
-        left: 5%;
-        z-index: 0;
+        height: auto;
+        margin-left: 5%;
+        margin-top: 5%;
+        position:initial;
+        width:90%;
+        margin-bottom:-4px;
     }
     
     label{
@@ -476,18 +832,22 @@ footer{
         line-height: 29px;
         text-align:left;
     }
-    
+
     #request-form{
-        padding-top:5%;
+        padding-top:10%;
         padding-right: 5%;
         padding-left: 5%;
+        padding-bottom:10%;
+    }
+
+    #form-button{
+        margin-bottom:0px;
     }
     
     #request-title{
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 5%;
+        transform: none;
+        position: initial;
+        padding-top: 5%;
     }
 
     footer{
@@ -499,6 +859,7 @@ footer{
     
 
 }
+
 
 @media only screen and (max-width: 600px) {
 
@@ -568,9 +929,17 @@ footer{
         display:none;
     }
     
+    #voting-process-mobile{
+        display:block;
+        position: absolute;
+        margin-top:20px;
+        bottom: -20px;
+        left:0;
+    }
+    
 
     section{
-        margin-bottom: 4vh;
+        margin-bottom: 2vh;
     }
 
     #why-zeus {
@@ -580,10 +949,15 @@ footer{
         grid-template-rows: 10vh 27vh 27vh 27vh 27vh 27vh;
         grid-template-columns: [start] 5% 90% 5% [end];
         grid-auto-flow: row;
+
+        p{
+            margin: 0;
+            padding: 0;
+        }
     }
 
     .why-zeus-icon{
-        width: 80%;
+        width: 75%;
     }
     
     #why-zeus-title{
@@ -605,17 +979,17 @@ footer{
     }
     
     #transparency-icon {
-        @include grid(3, 2, center, start);
+        @include grid(3, 2, center, center);
         text-align: center;
     }
     
     #integrity-icon {
-        @include grid(5, 2, center, start);
+        @include grid(5, 2, center, center);
         text-align: center;
     }
     
     #proven-icon{
-        @include grid(7, 2, center, start);
+        @include grid(7, 2, center, center);
         text-align: center;
     }
     
@@ -627,9 +1001,29 @@ footer{
         background: $light-grey;
     }
 
+    #go-online{
+        display: grid;
+        grid-template-columns: [start] 10% 80% 10%[end];
+        grid-template-rows: auto;
+    
+        h1{
+            font-weight: 550;
+            font-size: 36px;
+            line-height: 34px;
+        }
+    
+        p{
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom:40px;
+        }
+    }
+
     
     #go-online-text{
         @include grid(1,2);
+        padding-top: 10%;
+        padding-bottom: 10%;
         margin-bottom: 0px;
     }
     
@@ -637,12 +1031,15 @@ footer{
         display:none;
     }
 
+    #video-section{
+        height: video-section(90vw) + 20vw;  // 90vw is the width of the youtuve video;
+    }
+
 
     #trusted-section{
         text-align:center; 
         padding-left: 0; 
         padding-right: 0; 
-        padding-top:3%; 
         padding-bottom:3%;
 
         p{
@@ -692,12 +1089,50 @@ footer{
         margin-bottom: 4vh;
     }
 
-    #request-demo{
-        height:105vh; 
+    #request-demo {
+        height: auto;
+        position: initial;
     }
     
+    #ballot-white {
+        display:none;
+    }
+    
+    
     #form-background {
-        height: 80%;
+        height: auto;
+        margin-left: 5%;
+        margin-top: 10%;
+        position:initial;
+        width:90%;
+        margin-bottom:-2px;
+    }
+    
+    label{
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 29px;
+        text-align:left;
+    }
+    
+    #request-form{
+        padding-top:10%;
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-bottom:10%;
+    }
+
+    #form-button{
+        margin-bottom:0px;
+    }
+    
+    #request-title{
+        transform: none;
+        position: initial;
+        padding-top: 10%;
+        padding-right: 5%;
+        padding-left: 5%;
+        font-size: 26px;
     }
     
 }
