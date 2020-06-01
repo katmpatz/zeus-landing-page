@@ -103,9 +103,10 @@ p {
 
 #why-zeus {
   display: grid;
-  height: 140vh;
+  min-height: 140vh;
+  height: auto;
   width: 100vw;
-  grid-template-rows: 20vh 40vh 40vh 40vh;
+  grid-template-rows: 16% 28% 28% 28%;
   grid-template-columns: [start] 20% 30% 30% 20% [end];
   grid-auto-flow: row;
 }
@@ -974,7 +975,7 @@ footer p {
     display: grid;
     height: 172vh;
     width: 100vw;
-    grid-template-rows: 10vh 27vh 27vh 27vh 27vh 27vh;
+    grid-template-rows: 10vh 27vh 27vh 27vh 27vh 27vh 27vh;
     grid-template-columns: [start] 5% 90% 5% [end];
     grid-auto-flow: row;
   }
